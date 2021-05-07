@@ -1,0 +1,7 @@
+{
+  "name": "POS",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

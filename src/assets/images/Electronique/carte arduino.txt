@@ -1,0 +1,5 @@
+Carte arduino
+Le Uno Arduino est basé sur le microcontrôleur  ATmega328.
+Il dispose de 14 entrées/sortes numériques (dont 6 peuvent être utilisées comme sorties PWM), 6 entrées analogiques, d'un oscillateur à quartz de 16 MHz , d'une connexion USB, d'une prise d'alimentation, un connecteur ICSP, et un bouton de reset.
+Il contient tout le nécessaire pour piloter le microcontrôleur, il suffit simplement le connecter à un ordinateur avec un câble USB pour l'utiliser simplement.
+Le Uno diffère de tous les Arduino précédents dans le fait qu'il n'utilise pas le convertisseur USB-série FTDI. Au lieu de cela, il dispose d'un Atmega8U2 programmée comme convertisseur USB-série.

@@ -1,0 +1,2 @@
+Tello EDU
+Tello EDU est un drone impressionnant et programmable, parfait pour l’éducation. Vous pouvez facilement apprendre des langages de programmation tels que Scratch, Python et Swift

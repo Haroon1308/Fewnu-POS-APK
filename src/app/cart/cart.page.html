@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Panier des produits</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+  <ion-list>
+    <!-- <button ion-item *ngFor="let produit of cartItems; let i = index"> -->
+      <ion-button>
+      <ion-thumbnail item-left>
+          <img [src]="produit.item.pictures[0]" #picture (click)="showImage(picture, $event)">
+      </ion-thumbnail>
+      <h2>{{produit.item.title}}</h2>
+      <p>
+        <ion-badge color="secondary">{{produit.qty}}</ion-badge> x {{produit.item.price | currency}}
+      </p>
+      <p *ngIf="produit.item.availability.feed">Livraison: {{produit.item.availability.feed}}</p>
+      <p>Total: {{(produit.qty*produit.item.price)+produit.item.availability.feed | currency}}</p>
+      <button (click)="removeItem(produit, i)" ion-button item-right icon-only clear color="danger">
+        <ion-icon name="remove-circle"></ion-icon>
+      </ion-button>
+    
+</ion-list>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button block (click)="closeModal()">Fermer</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" fill="outline"> {{total}} CFA</ion-button>
+        <ion-button expand="full" fill="outline"><ion-icon name="print"></ion-icon>Facture</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
+</ion-content>

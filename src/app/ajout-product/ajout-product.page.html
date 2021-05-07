@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Ajouter produit</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="danger"><ion-icon name="log-out"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Informations du produit</ion-label>
+    </ion-item-divider>
+  
+    <ion-item>
+      <ion-label position="floating">Nom du produit</ion-label>
+  <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Designation</ion-label>
+  <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Prix</ion-label>
+  <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Quantité</ion-label>
+  <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+  </ion-item-group>
+  
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Les photos du produit</ion-label>
+    </ion-item-divider>
+    <ion-item> <ion-button shape="round" fill="outline" color="warning">
+      <ion-icon name="image"></ion-icon>
+    </ion-button>&nbsp;&nbsp; Ou &nbsp;&nbsp;
+    <ion-button shape="round" fill="outline" color="success">
+      <ion-icon name="camera"></ion-icon>
+    </ion-button></ion-item>
+  </ion-item-group>
+  <ion-button expand="full">Ajouter</ion-button>
+</ion-content>

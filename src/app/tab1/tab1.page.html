@@ -1,0 +1,127 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      Mon magasin
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openCart()"><ion-icon name="add"></ion-icon></ion-button>
+      <ion-button color="danger"><ion-icon name="log-out"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+
+  <!-- <ion-list *ngIf="products" >
+    <ion-item *ngFor="let item of products" >
+      {{ item.name }}
+      <button end slot="end" ion-button (click)="addPanier(item.id)">Ajouter au panier</button>
+    </ion-item>
+  </ion-list> -->
+  <ion-toolbar>
+    <ion-searchbar placeholder="Rechercher..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
+  </ion-toolbar>
+
+ 
+
+
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            <B>Nom</B>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <B> </B>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <B>Quantité</B>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <B> </B>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <B>Prix</B>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-item  *ngFor="let item of panier; let i = index">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            {{ getProduct(item.produit_id).name }}
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-button (click)="removeItem(item.produit_id, i)" item-left icon-only fill="clear" color="danger">
+              <ion-icon name="remove-circle"></ion-icon>
+            </ion-button>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+
+            <ion-button (click)="addCart(item.produit_id, i)" item-right icon-only fill="clear" color="success">
+              <ion-icon name="add"></ion-icon>
+            </ion-button>
+             
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>{{ item.q }}</div>
+        </ion-col>
+        <ion-col>
+          <div>
+            {{ getProduct(item.produit_id).price * item.q }}
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <h4 style="text-align: center;">Total: &nbsp;<ion-badge color="warning">{{ getTotalPanier() }} CFA</ion-badge></h4>
+  <ion-button expand="full" (click)="factureVente()"><ion-icon name="print"></ion-icon>Facture</ion-button>
+
+    
+ <ion-list *ngIf="products" >
+  <ion-row>
+    <ion-col *ngFor="let item of products" >
+      <div>
+        <ion-card>
+          <ion-thumbnail>
+          <img class="photo" src="/assets/images/Drones/drone xiro2.jpg" />
+        </ion-thumbnail>
+          <ion-button size="small" (click)="addPanier(item.id)">
+            <ion-icon name="add"></ion-icon>Ajouter</ion-button> 
+          <ion-card-header>
+            <ion-card-title>{{ item.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <h5 style="text-align: center;">
+              <ion-badge color="success">
+                {{ item.price }} CFA
+              </ion-badge></h5> 
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-col>
+  </ion-row>
+  
+    
+  
+</ion-list>  
+</ion-content>

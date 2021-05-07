@@ -1,0 +1,5 @@
+enceinte-connectee-sonos-play-jeedom
+La qualité audio est suffisante, elles affichent l’heure et on peut contrôler la matrice LED pour afficher des images.
+
+Pour la connexion audio bluetooth, c’est le profil A2DP qui est utilisé. Un contrôleur ne peut être connecté qu’à un seul périphérique A2DP.
+Du coup pour contrôler plusieurs enceintes, il faut un contrôleur Bluetooth par enceinte (clé usb ou bluetooth intégré du raspberry 3 par exemple).
